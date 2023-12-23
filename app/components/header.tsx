@@ -2,7 +2,6 @@
 import Link from "next/link";
 import style from './header.module.css'
 import {usePathname, useRouter} from "next/navigation";
-import {useEffect} from "react";
 import {AppBar, Toolbar} from "@mui/material";
 
 
