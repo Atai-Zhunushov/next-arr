@@ -11,6 +11,7 @@ const Pokemons = () => {
      interface Pokemon {
         name: string;
         img: string;
+        url: string;
         // Дополнительные поля, если они есть в данных о покемонах
     }
 
