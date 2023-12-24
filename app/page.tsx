@@ -32,18 +32,18 @@ export default function Home() {
     setOpen(true)
   }
 
-  const passwordFunc = (e) => {
+  const passwordFunc = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPasswordValue(e.target.value)
   }
-  const nameFunc = (e) => {
+  const nameFunc = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputNameValue(e.target.value)
   }
 
-  const phoneFunc = (e) => {
+  const phoneFunc = (e: React.ChangeEvent<HTMLInputElement>) => {
     serPhoneInputValue(e.target.value)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     console.log('Name:', inputNameValue);
     console.log('Password:', passwordValue);
