@@ -7,10 +7,17 @@ interface PageParams {
     userId: number;
     // Другие параметры, если есть
 }
+interface User {
+    name: string;
+    phone: string;
+    email: string;
+    id: number;
+    website: string;
+}
 
 
 const Page: React.FC<{ params: PageParams }> = ({params}) => {
-    const [userData, setUserData] = useState({
+    const [userData, setUserData] = useState<User>({
         name: '',
         phone: '',
         email: '',
@@ -33,18 +40,19 @@ const Page: React.FC<{ params: PageParams }> = ({params}) => {
     console.log(userData)
     return (
         <div className='text-center w-1000 mx-auto'>
-            <TableContainer component={Paper} >
-                <Table sx={{ minWidth: 350 }} size="small" aria-label="a dense table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>User</TableCell>
-                            <TableCell align="right">Phone</TableCell>
-                            <TableCell align="right">Email</TableCell>
-                            <TableCell align="right">Website</TableCell>
-                            <TableCell align="right">ID</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
+            {userData ?
+                <TableContainer component={Paper} >
+                    <Table sx={{ minWidth: 350 }} size="small" aria-label="a dense table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>User</TableCell>
+                                <TableCell align="right">Phone</TableCell>
+                                <TableCell align="right">Email</TableCell>
+                                <TableCell align="right">Website</TableCell>
+                                <TableCell align="right">ID</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
                             <TableRow
                                 sx={ { border: 0 } }
                             >
@@ -56,9 +64,10 @@ const Page: React.FC<{ params: PageParams }> = ({params}) => {
                                 <TableCell align="right">{userData.website}</TableCell>
                                 <TableCell align="right">{userData.id}</TableCell>
                             </TableRow>
-                    </TableBody>
-                </Table>
-            </TableContainer>
+                        </TableBody>
+                    </Table>
+                </TableContainer> : <p>Loading ...</p>
+            }
         </div>
     );
 };
