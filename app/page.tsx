@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import {Box, Button, Modal, TextField, Typography} from "@mui/material";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, FormEventHandler} from "react";
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -43,7 +43,7 @@ export default function Home() {
     serPhoneInputValue(e.target.value)
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
     console.log('Name:', inputNameValue);
     console.log('Password:', passwordValue);
