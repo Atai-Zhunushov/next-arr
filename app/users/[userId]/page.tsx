@@ -9,8 +9,8 @@ const Page = ({params}) => {
         name: '',
         phone: number,
         email: '',
-        id:number,
-        website:''
+        id: number,
+        website: ''
     });
 
 
@@ -28,7 +28,7 @@ const Page = ({params}) => {
     console.log(userData)
     return (
         <div className='text-center w-1000 mx-auto'>
-            <TableContainer component={Paper} className=''>
+            <TableContainer component={Paper} >
                 <Table sx={{ minWidth: 350 }} size="small" aria-label="a dense table">
                     <TableHead>
                         <TableRow>
@@ -41,7 +41,7 @@ const Page = ({params}) => {
                     </TableHead>
                     <TableBody>
                             <TableRow
-                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                sx={ { border: 0 } }
                             >
                                 <TableCell component="th" scope="row">
                                     {userData.name}
