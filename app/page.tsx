@@ -43,7 +43,7 @@ export default function Home() {
     serPhoneInputValue(e.target.value)
   }
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault()
     console.log('Name:', inputNameValue);
     console.log('Password:', passwordValue);
