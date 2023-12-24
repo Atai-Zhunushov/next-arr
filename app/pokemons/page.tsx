@@ -10,7 +10,7 @@ const Pokemons = () => {
     const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
      interface Pokemon {
         name: string;
-        url: string;
+        img: string;
         // Дополнительные поля, если они есть в данных о покемонах
     }
 
