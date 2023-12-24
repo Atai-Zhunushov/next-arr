@@ -3,8 +3,13 @@ import React, {useEffect, useState} from 'react';
 import {number} from "prop-types";
 import {Table, TableContainer, TableHead, TableBody, TableCell, TableRow, Paper} from "@mui/material";
 
+interface PageParams {
+    userId: number;
+    // Другие параметры, если есть
+}
 
-const Page = ({params}) => {
+
+const Page: React.FC<{ params: PageParams }> = ({params}) => {
     const [userData, setUserData] = useState({
         name: '',
         phone: '',

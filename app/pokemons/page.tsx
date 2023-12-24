@@ -7,7 +7,7 @@ import Image from "next/image";
 
 
 const Pokemons = () => {
-    const [pokemonData, setPokemonData] = useState([]);
+    const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
      interface Pokemon {
         name: string;
         url: string;
@@ -30,7 +30,7 @@ const Pokemons = () => {
                 };
             });
 
-            const pokemonDetails = await Promise.all(promises);
+            const pokemonDetails: Pokemon[] = await Promise.all(promises);
             setPokemonData(pokemonDetails);
         };
 
