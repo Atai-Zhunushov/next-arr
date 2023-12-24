@@ -4,8 +4,16 @@ import Image from "next/image";
 
 
 
+
+
 const Pokemons = () => {
     const [pokemonData, setPokemonData] = useState([]);
+     interface Pokemon {
+        name: string;
+        url: string;
+        // Дополнительные поля, если они есть в данных о покемонах
+    }
+
 
 
     useEffect(() => {
@@ -13,7 +21,7 @@ const Pokemons = () => {
             const url = 'https://pokeapi.co/api/v2/';
             const response = await fetch(url + 'pokemon?offset=20&limit=20');
             const pokemons = await response.json();
-            const promises = pokemons.results.map(async (pokemon) => {
+            const promises = pokemons.results.map(async (pokemon: Pokemon) => {
                 const response = await fetch(pokemon.url);
                 const data = await response.json();
                 return {
