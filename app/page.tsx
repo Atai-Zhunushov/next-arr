@@ -23,6 +23,7 @@ export default function Home() {
   const [phoneValue, serPhoneInputValue] = useState('')
 
 
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -47,6 +48,9 @@ export default function Home() {
     console.log('Name:', inputNameValue);
     console.log('Password:', passwordValue);
     console.log('Phone:', phoneValue);
+    if (inputNameValue && passwordValue && phoneValue) {
+      handleClose()
+    }
   }
 
 
@@ -185,7 +189,7 @@ export default function Home() {
                       <TextField value={inputNameValue} onChange={nameFunc} id="outlined-basic" label="name" variant="outlined" />
                       <TextField value={passwordValue} onChange={passwordFunc} id="outlined-basic" label="password" variant="outlined" />
                       <TextField value={phoneValue} onChange={phoneFunc} id="outlined-basic" label="phone" variant="outlined" />
-                      <Button type='submit' variant='outlined'>Авторизироваться</Button>
+                      <Button disabled={!inputNameValue || !passwordValue || !phoneValue} type='submit' variant='outlined'>Авторизироваться</Button>
                     </Box>
                   </form>
 
