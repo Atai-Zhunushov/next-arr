@@ -42,7 +42,7 @@ const Page = () => {
                                 SportBikes
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                                "Motorcycles are a diverse range of two-wheeled vehicles,
+                                Motorcycles are a diverse range of two-wheeled vehicles,
                                 varying across styles, designs, and functionalities.
                             </Typography>
                         </CardContent>

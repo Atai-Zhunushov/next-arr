@@ -7,9 +7,9 @@ import {Table, TableContainer, TableHead, TableBody, TableCell, TableRow, Paper}
 const Page = ({params}) => {
     const [userData, setUserData] = useState({
         name: '',
-        phone: number,
+        phone: '',
         email: '',
-        id: number,
+        id: 0,
         website: ''
     });
 
@@ -24,7 +24,7 @@ const Page = ({params}) => {
 
         fetchPokemonData();
 
-    }, [])
+    }, [params.userId])
     console.log(userData)
     return (
         <div className='text-center w-1000 mx-auto'>
