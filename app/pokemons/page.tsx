@@ -1,6 +1,7 @@
 "use client"
 import React, {useEffect, useState} from 'react';
 import Image from "next/image";
+import {Box, CircularProgress} from "@mui/material";
 
 
 
@@ -41,13 +42,16 @@ const Pokemons = () => {
     return (
         <>
             <div className="w-1000 flex align-center gap-10 flex-wrap mx-auto text-center my-5 ">
-                {pokemonData.map((pokemon, index) => (
-                    <div key={index} >
-                        <h2>{pokemon.name}</h2>
-                        <Image src={pokemon.img} alt={pokemon.name} width={100} height={100}/>
+
+                {pokemonData.length > 0 ? pokemonData.map((pokemon, index) => (
+                    <div key={index} className='transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300' >
+                        <h2 className='font-mono font-medium text-white'>{pokemon.name}</h2>
+                        <Image src={pokemon.img} alt={pokemon.name} width={100} height={100} />
                         {/* Другая информация о покемоне */}
                     </div>
-                ))}
+                )) : <Box className='flex mx-auto'>
+                    <CircularProgress/>
+                </Box>}
             </div>
 
         </>
