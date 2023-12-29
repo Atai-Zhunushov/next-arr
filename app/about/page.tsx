@@ -58,7 +58,7 @@ const Page = () => {
             <Typography className='text-center mb-7' variant='h5'>
                 Наша коллекция котов
             </Typography>
-            <div className='flex flex-wrap gap-8 w-1700'>
+            <div className='flex flex-wrap gap-8 w-1700 mx-auto'>
                 {catData.length > 0 ? catData.map((cat) => (
                     <div key={cat.id} className='w-400 h-300'>
                         <p className='text-center mb-1'>{cat.name}</p>
